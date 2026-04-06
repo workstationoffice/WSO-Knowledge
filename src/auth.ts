@@ -8,8 +8,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     MicrosoftEntraID({
       clientId: process.env.AZURE_CLIENT_ID!,
       clientSecret: process.env.AZURE_CLIENT_SECRET!,
-      // issuer restricts login to your company's Microsoft 365 tenant only
-      issuer: `https://login.microsoftonline.com/${process.env.AZURE_TENANT_ID}/v2.0`,
+      tenantId: process.env.AZURE_TENANT_ID,
     }),
   ],
 
